@@ -19,7 +19,7 @@ const UserDashboard = () => {
     <div className="min-h-screen flex flex-col items-center bg-gray-50 p-5 bg-[url('/images/manreading.jpg')] bg-cover bg-center">
       <h2 className="text-7xl font-bold mb-6 text-white text-justify hover:text-gray-300 p-20">Book Smart</h2>
 
-      <h3 className='text-xl font-semibold  opacity-60 text-white '>Welcome to Book Smart platform. We are excited to have you as part of our community.  From here, you can explore a wide range of books, borrow what interests you, purchase and discover exciting new reads.</h3>
+      <h3 className='text-xl font-semibold  opacity-60 text-white '>Welcome to Book Smart Management System platform. We are excited to have you as part of our community.  From here, you can explore a wide range of books, borrow what interests you, purchase and discover exciting new reads.</h3>
       <br />
       <nav className="bg-white shadow-md rounded-lg p-4 w-full max-w-md">
         <ul className="space-y-4">
