@@ -7,7 +7,7 @@ import { getAuth, updateProfile, createUserWithEmailAndPassword, signInWithEmail
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
-  apiKey:import.meta.env.VITE_FIRE_BASE_API,
+  apiKey:import.meta.env.VITE_FIREBASE_API,
   authDomain: "book-management-ea099.firebaseapp.com",
   projectId: "book-management-ea099",
   storageBucket: "book-management-ea099.appspot.com",
