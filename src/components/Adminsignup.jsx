@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { auth } from '../config/firebase';
-import {createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from '../config/firebase';
 import { Link, useNavigate } from 'react-router-dom';
 
-const AdminsignUp= () => {
+const AdminsignUp = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +13,7 @@ const AdminsignUp= () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     console.log('Signing up with:', { username, email, password });
-    
+
     try {
       // Create admin with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -80,7 +80,7 @@ const AdminsignUp= () => {
         <p className="mt-4">
           Already have an account? <Link to="/adminsignin" className="text-blue-600">Admin Sign in </Link>
           <br />
-         <Link to="/" className="blue-white underline mb-4 block">Go Back</Link>
+          <Link to="/" className="blue-white underline mb-4 block">Go Back</Link>
         </p>
       </form>
     </div>
