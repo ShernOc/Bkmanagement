@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import UserNavBar from './UserNavBar';
-import {Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const BorrowedBooks = () => {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
@@ -25,14 +26,15 @@ const BorrowedBooks = () => {
   return (
     <div>
       <UserNavBar />
-      <div className="p-5 bg-[url('/images/library2.jpg')] bg-cover bg-center min-h-screen" >
-        <h2 className="text-3xl text-white font-bold">Borrowed Books</h2>
-        <table className="w-24 min-w-full  text-black border-separate border-spacing-2 border-slate-300 bg-slate-300" >
+      <div className="min-h-screen p-5 bg-[url('/images/library2.jpg')] bg-cover bg-center " >
+      <div className=" justify-items-center bg-white p-6 rounded shadow-md " >
+        <h2 className="text-2xl font-bold mb-4">
+          Borrowed Books</h2>
+        <table className=" min-w-full text-black border-separate border-spacing-2 border-slate-300 bg-slate-300" >
           <thead>
             <tr>
               <th className="border p-2">Title</th>
               <th className="border p-2">Author</th>
-              <th className="border p-2">Username</th>
               <th className="border p-2">Return Date</th>
             </tr>
           </thead>
@@ -42,7 +44,6 @@ const BorrowedBooks = () => {
                 <tr key={book.id}>
                   <td className="border p-2">{book.title}</td>
                   <td className="border p-2">{book.author}</td>
-                  <td className="border p-2">{book.username}</td>
                   <td className="border p-2">{book.return_date}</td>
                 </tr>
               ))
@@ -53,9 +54,13 @@ const BorrowedBooks = () => {
             )}
           </tbody>
         </table>
+      </div>
+      <br />
+        <div> 
+          <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
+        </div>
 
-        <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
-
+  
       </div>
     </div>
   );

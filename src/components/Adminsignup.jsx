@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { auth } from '../config/firebase';
 import {createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -36,8 +36,8 @@ const AdminsignUp= () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[url('/images/library3.jpg')] bg-cover bg-center">
-      <form className="bg-white p-6 rounded shadow-md" onSubmit={handleSignUp}>
+    <div className="flex absolute justify-center items-center h-screen inset-0 bg-[url('/images/library.jpg')] bg-cover bg-center">
+      <form className="bg-white p-6 rounded shadow-md opacity-85" onSubmit={handleSignUp}>
         <h2 className="text-2xl font-bold mb-4">Admin Sign Up</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         {/* Display errors when admin repeats email */}
@@ -78,7 +78,7 @@ const AdminsignUp= () => {
           Sign Up
         </button>
         <p className="mt-4">
-          Already have an account? <Link to="/adminsignin" className="text-blue-600">Admin Sign Up </Link>
+          Already have an account? <Link to="/adminsignin" className="text-blue-600">Admin Sign in </Link>
           <br />
          <Link to="/" className="blue-white underline mb-4 block">Go Back</Link>
         </p>

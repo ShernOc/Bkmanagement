@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import UserNavBar from './UserNavBar';
+import { Link } from 'react-router-dom';
 
-const PurchasedBooks = () => {
+const UserPurchasedBooks = () => {
   const [purchasedBooks, setPurchasedBooks] = useState([]);
 
   useEffect(() => {
     const fetchPurchasedBooks = async () => {
       try {
-        const response = await fetch('http://localhost:8000/user/purchased-books/');
+        const token = localStorage.getItem('token');
+        const response = await fetch('http://localhost:8000/user/purchased-books/', {
+          headers: {
+            'Authorization': `Bearer ${token}`, // Send token for authentication
+          },
+        });
+       
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -31,7 +38,6 @@ const PurchasedBooks = () => {
             <tr>
               <th className="border p-2">Title</th>
               <th className="border p-2">Author</th>
-              <th className="border p-2">Username</th>
               <th className="border p-2">Date of Purchase</th>
             </tr>
           </thead>
@@ -41,7 +47,6 @@ const PurchasedBooks = () => {
                 <tr key={book.id}>
                   <td className="border p-2">{book.title}</td>
                   <td className="border p-2">{book.author}</td>
-                  <td className="border p-2">{book.username}</td>
                   <td className="border p-2">{book.date_of_purchase}</td>
                 </tr>
               ))
@@ -52,9 +57,10 @@ const PurchasedBooks = () => {
             )}
           </tbody>
         </table>
+        <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
       </div>
     </div>
   );
 };
 
-export default PurchasedBooks;
+export default UserPurchasedBooks;

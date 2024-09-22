@@ -1,10 +1,30 @@
-import React, { useState } from 'react';
-import NavBar from './UserNavBar';
+import { useState, useEffect} from 'react';
+import UserNavBar from './UserNavBar';
+import { Link } from 'react-router-dom';
 
-const AddBooks = () => {
+const UserAddBooks = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [message, setMessage] = useState('');
+  const [addedBooks, setAddedBooks] = useState([]);
+  
+  const fetchBooks = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/books/');
+      if (!response.ok) {
+        throw new Error('Failed to fetch books.');
+      }
+      const data = await response.json();
+      setAddedBooks(data);
+    } catch (error) {
+      console.error('Error fetching books:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchBooks(); // fetches the books
+  }, []);
+
 
   const handleAddBook = async (e) => {
     e.preventDefault();
@@ -25,6 +45,7 @@ const AddBooks = () => {
         setMessage(`Book added successfully: ${result.title}`);
         setTitle('');
         setAuthor('');
+        fetchBooks();
       } else {
         throw new Error('Failed to add the book.');
       }
@@ -35,7 +56,7 @@ const AddBooks = () => {
 
   return (
     <div>
-      <NavBar />
+      <UserNavBar/>
       <div className="flex justify-center items-center h-screen bg-[url('/images/library2.jpg')] bg-cover bg-center ">
         <form className="bg-white p-6 rounded shadow-md" onSubmit={handleAddBook}>
           <h2 className="text-2xl font-bold mb-4">Add New Book</h2>
@@ -67,11 +88,39 @@ const AddBooks = () => {
           {message && <p className="mt-4 text-green-600">{message}</p>}
         </form>
       </div>
+      {/* Table to show added books */}
+      <div className="p-5 bg-white rounded shadow-md mt-6">
+        <h2 className="text-2xl font-bold mb-4">Added Books</h2>
+        <table className="min-w-full text-black border-separate border-spacing-2 border-slate-300">
+          <thead>
+            <tr>
+              <th className="border p-2">Title</th>
+              <th className="border p-2">Author</th>
+            </tr>
+          </thead>
+          <tbody>
+            {addedBooks.length > 0 ? (
+              addedBooks.map((book) => (
+                <tr key={book.id}>
+                  <td className="border p-2">{book.title}</td>
+                  <td className="border p-2">{book.author}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="2" className="border p-2 text-center">No books added yet.</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <br />
+        <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
+      </div>
     </div>
   );
 };
 
-export default AddBooks;
+export default UserAddBooks;
 
 
 

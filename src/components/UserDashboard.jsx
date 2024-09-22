@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import { signOut } from 'firebase/auth';
@@ -23,6 +22,13 @@ const UserDashboard = () => {
       <br />
       <nav className="bg-white shadow-md rounded-lg p-4 w-full max-w-md">
         <ul className="space-y-4">
+          <li>
+            <Link  to="/user/add-books"
+            className="block text-center text-lg text-white bg-slate-900 hover:bg-slate-700 rounded-lg py-2 transition duration-200"
+            > 
+            Add Books
+          </Link>
+          </li>
           <li>
             <Link 
               to="/user/books-to-borrow" 

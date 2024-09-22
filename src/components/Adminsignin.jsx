@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Adminsignin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [setError] = useState('');
   const navigate = useNavigate();
 
   const handleSignIn = async (e) => {
@@ -25,8 +25,8 @@ const Adminsignin = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-[url('/images/library3.jpg')] bg-cover bg-center">
-      <form className="bg-white p-6 rounded shadow-md" onSubmit={handleSignIn}>
+    <div className="flex absolute justify-center items-center h-screen inset-0 bg-[url('/images/library.jpg')] bg-cover bg-center">
+      <form className="bg-white p-6 rounded shadow-md opacity-85" onSubmit={handleSignIn}>
         <h2 className="text-2xl font-bold mb-4">Admin Sign in</h2>
         <div className="mb-4">
           <label className="block mb-2" htmlFor="email">Email:</label>

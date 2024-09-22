@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import UserNavBar from './UserNavBar';
 import { Link } from 'react-router-dom';
 
@@ -25,9 +25,9 @@ const BooksToBorrow = () => {
       {/* userNavbar */}
       <UserNavBar/>
 
-      <h2 className="text-3xl font-bold text-white">Books to Borrow</h2>
+      <h2 className="text-3xl font-bold text-white">Books To Borrow</h2>
       
-      <table className="w-24 min-w-full  text-black border-separate border-spacing-2 border-slate-300 bg-slate-300">
+      <table className="w-24 min-w-full  text-black border-separate border-spacing-2 border-black bg-slate-300">
         <thead>
           <tr>
             <th className="border p-2">Title</th>
@@ -47,7 +47,7 @@ const BooksToBorrow = () => {
           ))}
         </tbody>
       </table>
-
+      <br />
       <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
 
     </div>

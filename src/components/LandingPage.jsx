@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
-    <div className="min-h-screen w-full bg-[url('/images/library2.jpg')]  bg-cover bg-center "> 
+    <div className=" justify-center items-center relative min-h-screen inset-0 bg-[url('/images/library2.jpg')] bg-cover bg-center"> 
+    
     {/* links to all the Set Ups */}
-
-    <nav className='inline-flex  items-center justify-center whitespace-nowrap space-x-4   bg-slate-900 rounded-md p-4'>
+    <nav className='flex items-center justify-center whitespace-nowrap space-x-4   bg-slate-900 rounded-ld p-4'>
       {/* Link to User Sign In */}
       <Link to="/usersignin" className=" px-4 py-2 rounded mb-2 bg-blue-500 text-black font-semi-bold hover:bg-blue-700 hover:font-bold hover:text-white ">
         User Sign In
@@ -32,13 +32,13 @@ const LandingPage = () => {
         </button>
       </Link>
       </nav>
-      <br />
+<br /><br />
       <h1 className="text-5xl font-bold text-sky-50 text-center">Book Smart</h1>
       <br/><br/><br />
       <p className='inline-flex items-center text-balance text-grey font-bold text-4xl bg-slate-50/50 rounded-full '>
       Discover, Borrow, and Manage Books Effortlessly. Your Library, Just a Click Away!
       </p>
-    
+
     </div>
   );
 };

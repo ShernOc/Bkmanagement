@@ -1,5 +1,3 @@
-import React from 'react';
-import NavBar from './UserNavBar'; // Adjust path if necessary
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase'; // Ensure Firebase is configured
 import { signOut } from 'firebase/auth';
@@ -17,23 +15,18 @@ const AdminDashboard = () => {
   };
 
   return (
-    <div>
-      <NavBar />
-      <div className="p-5 bg-slate-500">
+    <div className="flex absolute justify-center items-center h-screen inset-0 bg-[url('/images/library.jpg')] bg-cover bg-center"> 
+      <div className="p-5 bg-white bg-opacity-70 rounded-md shadow-lg w-4/5 max-w-3xl text-center">
         <h2 className="text-3xl font-bold mb-4">Admin Dashboard</h2>
-        <p className="mt-2 text-gray-700">Welcome to the Admin Dashboard! You can manage users and books here.</p>
-
-        <div className="mt-4 p-4 bg-white rounded shadow-md">
-          <h3 className="text-xl font-semibold mb-2">Manage Users</h3>
-          <ul className="space-y-2">
-          </ul>
-        </div>
+        <p className="mt-2 text-gray-700 font-bold">
+          Welcome to the Dashboard! Where you can add, remove, view borrowed books and purchased books from your clients.
+          </p>
 
         <div className="mt-4 p-4 bg-white rounded shadow-md">
           <h3 className="text-xl font-semibold mb-2">Manage Books</h3>
           <ul className="space-y-2">
             <li>
-              <Link to="/admin/add-books" className="text-blue-500 hover:underline">Add Books</Link>
+              <Link to="/admin/book-count" className="text-blue-500 hover:underline">View Added Books</Link>
             </li>
             <li>
               <Link to="/admin/remove-book" className="text-blue-500 hover:underline">Remove Book</Link>
