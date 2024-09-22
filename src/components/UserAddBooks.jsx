@@ -58,6 +58,7 @@ const UserAddBooks = () => {
     <div>
       <UserNavBar/>
       <div className="flex justify-center items-center h-screen bg-[url('/images/library2.jpg')] bg-cover bg-center ">
+      <div>
         <form className="bg-white p-6 rounded shadow-md" onSubmit={handleAddBook}>
           <h2 className="text-2xl font-bold mb-4">Add New Book</h2>
           <div className="mb-4">
@@ -87,11 +88,12 @@ const UserAddBooks = () => {
           </button>
           {message && <p className="mt-4 text-green-600">{message}</p>}
         </form>
-      </div>
-      {/* Table to show added books */}
-      <div className="p-5 bg-white rounded shadow-md mt-6">
-        <h2 className="text-2xl font-bold mb-4">Added Books</h2>
-        <table className="min-w-full text-black border-separate border-spacing-2 border-slate-300">
+
+      <br />
+      {/* Table fpr added books */}
+      <div className=" justify-items-center p-6 bg-white rounded shadow-md ">
+        <h2 className="text-3xl font-bold mb-4 text-center">Added Books</h2>
+        <table className="min-w-full text-black border-separate border-spacing-2 border-slate-300 bg-slate-300">
           <thead>
             <tr>
               <th className="border p-2">Title</th>
@@ -113,8 +115,12 @@ const UserAddBooks = () => {
             )}
           </tbody>
         </table>
-        <br />
-        <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
+      </div> 
+      <br />
+       <div>
+          <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
+        </div>
+      </div>
       </div>
     </div>
   );

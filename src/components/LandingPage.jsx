@@ -27,7 +27,7 @@ const LandingPage = () => {
         <li>
                   {/* Link to User Admin signin  */}
           <Link
-            to="/admin/adminsignin"
+            to="/adminsignin"
             className="text-black bg-slate-400  hover:bg-slate-600  hover:text-white px-3 py-2 rounded-md transition"
           >
             Admin Sign In
@@ -36,7 +36,7 @@ const LandingPage = () => {
         <li>
                   {/* Link to Admin register */}
           <Link
-            to="/admin/signup"
+            to="/adminsignup"
             className="text-black bg-slate-400  hover:bg-slate-600 hover:text-white px-3 py-2 rounded-md transition"
           >
             Admin Sign Up

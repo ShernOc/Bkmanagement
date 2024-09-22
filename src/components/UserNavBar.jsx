@@ -6,16 +6,7 @@ const UserNavBar = () => {
       <ul className="flex space-x-4">
 
       {/* whitespace-nowrap bg-slate-950 shadow-md rounded-md p-4  */}
-
-        <li>
-          <Link
-            to="/user/books-to-borrow"
-            className="block text-center text-lg text-white bg-slate-600 hover:text-black rounded-lg py-2 transition duration-200"
-          >
-            Books to Borrow
-          </Link>
-        </li>
-        <li>
+      <li>
           <Link
             to="/user/add-books"
             className="block text-center text-lg text-white bg-slate-600 hover:text-black rounded-lg py-2 transition duration-200"
@@ -23,6 +14,16 @@ const UserNavBar = () => {
            Add books
           </Link>
         </li>
+
+        <li>
+          <Link
+            to="/user/books-to-borrow"
+            className="block text-center text-lg text-white bg-slate-600 hover:text-black rounded-lg py-2 transition duration-200"
+          >
+          Borrow Books
+          </Link>
+        </li>
+     
         <li>
           <Link
             to="/user/borrowed-books"

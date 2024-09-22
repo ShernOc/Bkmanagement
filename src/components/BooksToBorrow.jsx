@@ -21,11 +21,11 @@ const BooksToBorrow = () => {
   };
 
   return (
-    <div className="p-5 bg-[url('/images/library2.jpg')] bg-cover bg-center min-h-screen">
-      {/* userNavbar */}
+  <div>
       <UserNavBar/>
-
-      <h2 className="text-3xl font-bold text-white">Books To Borrow</h2>
+    <div className="p-5 bg-[url('/images/library2.jpg')] bg-cover bg-center min-h-screen">
+    <div className=" justify-items-center bg-white p-6 rounded shadow-md ">
+      <h2 className="text-3xl font-bold text-center">Books To Borrow</h2>
       
       <table className="w-24 min-w-full  text-black border-separate border-spacing-2 border-black bg-slate-300">
         <thead>
@@ -47,9 +47,12 @@ const BooksToBorrow = () => {
           ))}
         </tbody>
       </table>
+      </div>
       <br />
-      <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
-
+      <div>
+        <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
+      </div>
+    </div>
     </div>
   );
 };

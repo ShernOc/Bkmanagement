@@ -20,11 +20,12 @@ const BooksOnSale = () => {
   };
 
   return (
-    <div className="bg-[url('/images/library2.jpg')] bg-cover bg-center min-h-screen">    
-    {/* userNavbar  */}
+    <div > 
       <UserNavBar/>
+    <div className="bg-[url('/images/library2.jpg')] bg-cover bg-center min-h-screen" >
 
-      <h2 className="text-3xl font-bold text-white">Books On Sale</h2>
+    <div className=" justify-items-center bg-white p-6 rounded shadow-md " >
+      <h2 className="text-3xl font-bold mb-4 text-center">Books On Sale</h2>
       <table className="w-24 min-w-full  text-black border-separate border-spacing-2 border-slate-300 bg-slate-300">
         <thead>
           <tr>
@@ -45,10 +46,14 @@ const BooksOnSale = () => {
           ))}
         </tbody>
       </table>
-
-      <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
-
     </div>
+   
+    <br />
+      <div>
+        <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
+  </div>
+  </div> 
+  </div>
   );
 };
 
