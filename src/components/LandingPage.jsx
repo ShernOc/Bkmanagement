@@ -2,43 +2,57 @@ import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
-    <div className=" justify-center items-center relative min-h-screen inset-0 bg-[url('/images/library2.jpg')] bg-cover bg-center"> 
-    
-    {/* links to all the Set Ups */}
-    <nav className='flex items-center justify-center whitespace-nowrap space-x-4   bg-slate-900 rounded-ld p-4'>
-      {/* Link to User Sign In */}
-      <Link to="/usersignin" className=" px-4 py-2 rounded mb-2 bg-blue-500 text-black font-semi-bold hover:bg-blue-700 hover:font-bold hover:text-white ">
-        User Sign In
-      </Link>
-      <br/><br />
+    <div className="relative min-h-screen inset-0 bg-[url('/images/library2.jpg')] bg-cover bg-center">
+        {/* links to all the Set Ups */}
+        <nav className="bg-gray-800 p-4 shadow-md">
+      <ul className="flex space-x-10 justify-center">
+      <li>
+         {/* Link to User Sign In */}
+          <Link
+            to="/usersignin"
+            className="text-black bg-slate-400 hover:bg-slate-600 hover:text-white px-3 py-2 rounded-md transition"
+          >
+            User Sign in
+          </Link>
+        </li>
+        <li>
+                  {/* Links to Usersignup */}
+          <Link
+            to="/usersignup"
+            className="text-black bg-slate-400  hover:bg-slate-600 hover:text-white px-3 py-2 rounded-md transition"
+          >
+            User Sign UP
+          </Link>
+        </li>
+        <li>
+                  {/* Link to User Admin signin  */}
+          <Link
+            to="/admin/adminsignin"
+            className="text-black bg-slate-400  hover:bg-slate-600  hover:text-white px-3 py-2 rounded-md transition"
+          >
+            Admin Sign In
+          </Link>
+        </li>
+        <li>
+                  {/* Link to Admin register */}
+          <Link
+            to="/admin/signup"
+            className="text-black bg-slate-400  hover:bg-slate-600 hover:text-white px-3 py-2 rounded-md transition"
+          >
+            Admin Sign Up
+          </Link>
+        </li>
+      </ul>
+    </nav>
 
-      {/* Link to User Sign Up */}
-      <Link to="/usersignup">
-        <button className=" px-4 py-2 rounded mb-2 bg-blue-500 text-black font-semi-bold hover:bg-blue-700 hover:font-semibold hover:text-white">
-          User Sign Up
-        </button>
-      </Link>
-      <br/><br />
-
-      {/* Link to Admin Sign In */}
-      <Link to="/adminsignin" className="px-4 py-2 mb-2 bg-blue-500 text-black rounded font-semi-bold  hover:bg-blue-700 hover:font-semibold hover:text-white">
-        Admin Sign In
-      </Link>
-      
-      {/* Link to Admin Register */}
-      <Link to="/adminsignup">
-        <button className="px-4 py-2 bg-blue-500 rounded text-black font-semi-bold  hover:bg-blue-700 hover:font-semibold hover:text-white">
-          Admin Sign Up
-        </button>
-      </Link>
-      </nav>
-<br /><br />
-      <h1 className="text-5xl font-bold text-sky-50 text-center">Book Smart</h1>
-      <br/><br/><br />
-      <p className='inline-flex items-center text-balance text-grey font-bold text-4xl bg-slate-50/50 rounded-full '>
-      Discover, Borrow, and Manage Books Effortlessly. Your Library, Just a Click Away!
-      </p>
-
+      <br /><br />
+      <div className=' items-center'>
+        <h1 className="text-5xl font-bold text-sky-50 text-center">Book Smart</h1>
+        <br /><br /><br />
+        <p className='flex justify-center bg-slate-300 text-4xl font-bold  opacity-80'>
+          Discover, Borrow, and Manage Books Effortlessly. Your Library, Just a Click Away!
+        </p>
+      </div>
     </div>
   );
 };
