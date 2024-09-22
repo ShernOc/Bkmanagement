@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NavBar from './NavBar';
+import NavBar from './UserNavBar';
 
 const RemoveBook = () => {
   const [bookId, setBookId] = useState('');

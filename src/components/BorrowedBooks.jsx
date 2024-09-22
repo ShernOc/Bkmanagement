@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from './NavBar';
+import UserNavBar from './UserNavBar';
+import {Link } from 'react-router-dom';
 
 const BorrowedBooks = () => {
   const [borrowedBooks, setBorrowedBooks] = useState([]);
@@ -23,7 +24,7 @@ const BorrowedBooks = () => {
 
   return (
     <div>
-      <NavBar />
+      <UserNavBar />
       <div className="p-5 bg-[url('/images/library2.jpg')] bg-cover bg-center min-h-screen" >
         <h2 className="text-3xl text-white font-bold">Borrowed Books</h2>
         <table className="w-24 min-w-full  text-black border-separate border-spacing-2 border-slate-300 bg-slate-300" >
@@ -52,6 +53,9 @@ const BorrowedBooks = () => {
             )}
           </tbody>
         </table>
+
+        <Link to="/user" className="text-white underline mb-4 block">Go Back</Link>
+
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
-import { auth } from '../config/firebase'; // Ensure you have Firebase initialized
+import { auth } from '../config/firebase';
 import { signOut } from 'firebase/auth';
 
 const UserDashboard = () => {
-  const navigate = useNavigate(); // Used for navigating after logout
+  // Navigates to log out
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
@@ -17,8 +17,10 @@ const UserDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gray-50 p-5 bg-[url('public/images/manreading.jpg')] bg-cover bg-center">
-      <h2 className="text-7xl font-bold mb-6 text-white text-justify hover:text-just p-20" >User Dashboard</h2>
+    <div className="min-h-screen flex flex-col items-center bg-gray-50 p-5 bg-[url('/images/manreading.jpg')] bg-cover bg-center">
+      <h2 className="text-7xl font-bold mb-6 text-white text-justify hover:text-gray-300 p-20">Book Smart</h2>
+      <h3 className='text-xl text-bold text-slate-50/75'>Welcome to Book Smart platform. We are excited to have you as part of our community.  From here, you can explore a wide range of books, borrow what interests you, purchase and discover exciting new reads.</h3>
+      <br />
       <nav className="bg-white shadow-md rounded-lg p-4 w-full max-w-md">
         <ul className="space-y-4">
           <li>
@@ -53,17 +55,18 @@ const UserDashboard = () => {
               Books on Sale
             </Link>
           </li>
-          {/* Logout Button */}
-          <li>
-            <button
-              onClick={handleLogout}
-              className="block w-full text-center text-lg text-white bg-gray-600 hover:bg-gray-700 rounded-lg py-2 transition duration-200"
-            >
-              Logout
-            </button>
-          </li>
         </ul>
       </nav>
+      {/* Logout Button */}
+      <div>
+        <br />
+        <button
+          onClick={handleLogout}
+          className="block w-full text-center text-lg text-white bg-gray-600 hover:bg-gray-700 rounded-lg py-2 transition duration-200"
+        >
+          Logout
+        </button>
+      </div>
     </div>
   );
 };

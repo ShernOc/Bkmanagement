@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from './NavBar';
+import UserNavBar from './UserNavBar';
 
 const PurchasedBooks = () => {
   const [purchasedBooks, setPurchasedBooks] = useState([]);
@@ -23,7 +23,7 @@ const PurchasedBooks = () => {
 
   return (
     <div>
-      <NavBar />
+      <UserNavBar />
       <div className="min-h-screen p-5 bg-[url('/images/library2.jpg')] bg-cover bg-center">
         <h2 className="text-3xl font-bold text-white">Purchased Books</h2>
         <table className="w-24 min-w-full  text-black border-separate border-spacing-2 border-slate-300 bg-slate-300">

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './NavBar'; // Adjust path if necessary
+import NavBar from './UserNavBar'; // Adjust path if necessary
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase'; // Ensure Firebase is configured
 import { signOut } from 'firebase/auth';
@@ -22,7 +22,7 @@ const AdminDashboard = () => {
       <div className="p-5 bg-slate-500">
         <h2 className="text-3xl font-bold mb-4">Admin Dashboard</h2>
         <p className="mt-2 text-gray-700">Welcome to the Admin Dashboard! You can manage users and books here.</p>
-        
+
         <div className="mt-4 p-4 bg-white rounded shadow-md">
           <h3 className="text-xl font-semibold mb-2">Manage Users</h3>
           <ul className="space-y-2">

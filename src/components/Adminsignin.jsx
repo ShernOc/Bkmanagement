@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { auth } from '../config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Adminsignin = () => {
   const [email, setEmail] = useState('');
@@ -54,7 +54,9 @@ const Adminsignin = () => {
           Sign in
         </button>
         <p className="mt-4">
-          No account? <a href="/adminsignup" className="text-blue-600">Sign Up</a>
+          No account? <Link to="/adminsignup" className="text-blue-600">Sign Up</Link>
+          <br />
+         <Link to="/" className="blue-white underline mb-4 block">Go Back</Link>
         </p>
       </form>
     </div>

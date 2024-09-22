@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { auth } from '../config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const UsersignIn = () => {
   const [email, setEmail] = useState('');
@@ -25,7 +26,8 @@ const UsersignIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="flex justify-center items-center h-screen bg-[url('/images/library3.jpg')] bg-cover bg-center" >
+      
       <form className="bg-white p-6 rounded shadow-md" onSubmit={handleSignIn}>
         <h2 className="text-2xl font-bold mb-4">Sign In</h2>
         <div className="mb-4">
@@ -50,14 +52,16 @@ const UsersignIn = () => {
             className="border rounded w-full p-2"
           />
         </div>
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 hover:font-semibold text-white p-2 rounded w-full">
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 hover:font-semibold text-black p-2 rounded w-full">
           Sign In
         </button>
         <p className="mt-4">
-         No account? <a href="/usersignup" className="text-blue-600">Sign Up</a>
+         No account? <Link to ="/usersignup" className="text-blue-600">Sign Up</Link> <br />
+         <Link to="/" className="blue-white underline mb-4 block">Go Back</Link>
         </p>
       </form>
     </div>
+    
   );
 };
 
